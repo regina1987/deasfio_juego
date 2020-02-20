@@ -1,0 +1,48 @@
+<%= form_with(model: game, local: true) do |form| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rule %>
+    <%= form.text_area :rule %>
+  </div>
+
+  <div class="field">
+  <%= form.label :insruction %>
+  <%= form.file_field :insruction %>
+  </div>
+<br>
+<br>
+
+<div class="field">
+<%= form.label "La foto de las piezas" %>
+<%= form.file_field :avatar %>
+</div>
+<br>
+<br>
+
+<div class="field">
+<%= form.label "Las fotos de  partes del tablero "%>
+<%= form.file_field :images, multiple: true %>
+</div>
+<br>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
