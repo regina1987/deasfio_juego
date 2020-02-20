@@ -11,33 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Name</label>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :rule %>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="h3">Rule</label>
     <%= form.text_area :rule %>
   </div>
 
-  <div class="field">
-  <%= form.label :insruction %>
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Insruction</label>
   <%= form.file_field :insruction %>
   </div>
 <br>
 <br>
 
-<div class="field">
-<%= form.label "La foto de las piezas" %>
+<div class="form-group">
+  <label for="exampleInputEmail1" class="h3">La foto de las piezas</label>
 <%= form.file_field :avatar %>
 </div>
 <br>
 <br>
 
-<div class="field">
-<%= form.label "Las fotos de  partes del tablero "%>
-<%= form.file_field :images, multiple: true %>
+<div class="form-group">
+  <label for="exampleInputEmail1" class="h3">Las fotos de  partes del tablero</label>
+<%= form.label "Las fotos de  partes del tablero "%><%= form.file_field :images, multiple: true %>
 </div>
 <br>
 

@@ -1,25 +1,36 @@
 <p id="notice"><%= notice %></p>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Name:</label>
+      <label for="exampleInputEmail1"><%= @game.name %></label>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
-<p>
-<strong>Rule:</strong>
-<%= @game.rule %>
-</p>
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Rule:</label>
+    <label for="exampleInputEmail1"><%= @game.rule %></label>
+  </div>
 
+<div class="form-group">
+  <label for="exampleInputEmail1" class="h3">Insruction eb PDF:</label>
+  <% @game.insruction %>
+  <a href="<%= rails_blob_path(@game.insruction, disposition: "attachment") %>" > Descargar PDF</a>
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Las foto de las piezas:</label>
 <% if @game.avatar.attached? %>
 <p>
-<strong>Las foto de las piezas:</strong>
 <%= image_tag @game.avatar, style: "-webkit-filter: grayscale(100%) height:150px;width:150px" %>
-
 </p>
 <% end %>
+  </div>
 
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="h3">Las fotos de  partes del tablero</label>
 <% if @game.images.attached? %>
 <p>
-<strong> Las fotos de  partes del tablero</strong>
+
 <br>
 <% @game.images.each do |image| %>
 <%= image_tag image, style: "-webkit-filter: grayscale(100%) height:150px;width:150px" %>
@@ -27,15 +38,9 @@
 <% end %>
 </p>
 <% end %>
-
-<p>
-<strong>Insruction:</strong>
-<br>
-<%= @game.insruction %> <br>
-<a href="<%= rails_blob_path(@game.insruction, disposition: "attachment") %>" > Descargar PDF</a>
-
-</p>
+  </div>
 
 
+</form>
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
