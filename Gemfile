@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
 gem 'image_processing', '~> 1.2'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'aws-sdk', '~> 3', group: :production
